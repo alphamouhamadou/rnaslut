@@ -18,8 +18,6 @@ import CtaSection from '@/components/rnaslut/CtaSection';
 import ContactSection from '@/components/rnaslut/ContactSection';
 import Footer from '@/components/rnaslut/Footer';
 
-export const dynamic = 'force-dynamic';
-
 export default async function HomePage() {
   const [stats, posts, faqs, gallery, partners] = await Promise.all([
     db.siteStat.findMany({ orderBy: { order: 'asc' } }),
