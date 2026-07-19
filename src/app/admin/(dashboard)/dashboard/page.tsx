@@ -9,6 +9,8 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminDashboardPage() {
   const [postsCount, galleryCount, faqCount, partnersCount, unreadMessages, recentMessages] =
     await Promise.all([

@@ -8,6 +8,8 @@ import PresentationSection from '@/components/rnaslut/PresentationSection';
 import ActivitiesSection from '@/components/rnaslut/ActivitiesSection';
 import GallerySection from '@/components/rnaslut/GallerySection';
 import ResultsSection from '@/components/rnaslut/ResultsSection';
+
+export const dynamic = 'force-dynamic';
 import PerspectivesSection from '@/components/rnaslut/PerspectivesSection';
 import BlogSection from '@/components/rnaslut/BlogSection';
 import FaqSection from '@/components/rnaslut/FaqSection';
