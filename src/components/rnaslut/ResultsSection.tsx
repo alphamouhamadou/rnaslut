@@ -127,7 +127,7 @@ export default function ResultsSection() {
   return (
     <section className="gradient-dark py-16 md:py-24" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 reveal">
+        className="text-center mb-12 reveal visible"
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
             Nos Résultats
           </h2>
@@ -141,7 +141,7 @@ export default function ResultsSection() {
           {RESULT_STATS.map((stat) => (
             <div
               key={stat.label}
-              className="bg-white/6 backdrop-blur-md border border-white/12 rounded-xl p-6 flex items-center gap-5 reveal"
+              className="bg-white/6 backdrop-blur-md border border-white/12 rounded-xl p-6 flex items-center gap-5 reveal visible"
             >
               <div
                 className={`w-14 h-14 ${stat.gradient} rounded-xl flex items-center justify-center shrink-0`}
