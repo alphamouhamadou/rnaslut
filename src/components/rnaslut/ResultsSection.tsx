@@ -93,7 +93,7 @@ function AnimatedCounter({
 
   const formatted =
     value === 1
-      ? '✓'
+      ? '\u2713'
       : `${display.toLocaleString('fr-FR')}${suffix}`;
 
   return (
@@ -127,13 +127,13 @@ export default function ResultsSection() {
   return (
     <section className="gradient-dark py-16 md:py-24" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        className="text-center mb-12 reveal visible"
+        <div className="text-center mb-12 reveal visible">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
-            Nos Résultats
+            Nos R&eacute;sultats
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto">
-            Des chiffres qui témoignent de l&apos;engagement quotidien du réseau
-            pour la lutte contre la tuberculose au Sénégal.
+            Des chiffres qui t&eacute;moignent de l&apos;engagement quotidien du r&eacute;seau
+            pour la lutte contre la tuberculose au S&eacute;n&eacute;gal.
           </p>
         </div>
 
@@ -160,14 +160,13 @@ export default function ResultsSection() {
           ))}
         </div>
 
-        {/* Quote callout */}
         <RevealOnScroll>
           <div className="mt-12 border-l-4 border-rn-yellow bg-white/5 backdrop-blur-sm rounded-r-xl p-6 md:p-8 flex items-start gap-4">
             <Quote className="size-6 text-rn-yellow shrink-0 mt-1" />
             <p className="text-white/70 leading-relaxed italic">
-              Chaque cas détecté est une vie sauvée. Chaque sensibilisation est un
-              pas de plus vers un Sénégal sans tuberculose. Notre force réside dans
-              l&apos;engagement de nos membres et la confiance des communautés que nous servons.
+              Chaque cas d&eacute;tect&eacute; est une vie sauv&eacute;e. Chaque sensibilisation est un
+              pas de plus vers un S&eacute;n&eacute;gal sans tuberculose. Notre force r&eacute;side dans
+              l&apos;engagement de nos membres et la confiance des communaut&eacute;s que nous servons.
             </p>
           </div>
         </RevealOnScroll>
