@@ -1,46 +1,32 @@
-import { Bus, Pill, GraduationCap, UserCheck, Star, Globe } from 'lucide-react';
+import { Bus, Pill, GraduationCap, UserCheck, Star, Globe, type LucideIcon } from 'lucide-react';
 import RevealOnScroll from './RevealOnScroll';
 
-const PERSPECTIVES = [
-  {
-    icon: Bus,
-    title: 'Vigilance-Transport',
-    description:
-      'Renforcer la surveillance de la tuberculose dans les gares routières et les points de transport à haut risque de transmission.',
-  },
-  {
-    icon: Pill,
-    title: 'Implication communautaire',
-    description:
-      'Mobiliser les communautés locales pour une prise en charge précoce des cas de tuberculose et un meilleur suivi des traitements.',
-  },
-  {
-    icon: GraduationCap,
-    title: 'Écoles & Daaras',
-    description:
-      "Intégrer les programmes de sensibilisation contre la TB dans les écoles et les daaras pour toucher les jeunes publics.",
-  },
-  {
-    icon: UserCheck,
-    title: 'Médiatrices TB',
-    description:
-      'Former et déployer des médiatrices de santé communautaire spécialisées dans la détection et l\'accompagnement des patients tuberculeux.',
-  },
-  {
-    icon: Star,
-    title: 'Ambassadeurs & Partenaires',
-    description:
-      "Développer un réseau d'ambassadeurs et renforcer les partenariats avec les institutions de santé publiques et privées.",
-  },
-  {
-    icon: Globe,
-    title: 'Visibilité & Renforcement',
-    description:
-      "Augmenter la visibilité de l'association et renforcer ses capacités organisationnelles pour une action durable à l'échelle nationale.",
-  },
-];
+interface PerspectiveItem {
+  id: string;
+  title: string;
+  description: string;
+  icon: string;
+  order: number;
+}
 
-export default function PerspectivesSection() {
+const ICON_MAP: Record<string, LucideIcon> = {
+  'fas fa-bus': Bus,
+  'fas fa-pills': Pill,
+  'fas fa-school': GraduationCap,
+  'fas fa-female': UserCheck,
+  'fas fa-star': Star,
+  'fas fa-globe': Globe,
+};
+
+const DEFAULT_ICON = Globe;
+
+interface PerspectivesSectionProps {
+  perspectives: PerspectiveItem[];
+}
+
+export default function PerspectivesSection({ perspectives }: PerspectivesSectionProps) {
+  if (!perspectives || perspectives.length === 0) return null;
+
   return (
     <section id="perspectives" className="py-20 bg-background">
       <div className="max-w-[900px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -62,10 +48,10 @@ export default function PerspectivesSection() {
           />
 
           <div className="flex flex-col gap-6">
-            {PERSPECTIVES.map((item, i) => {
-              const Icon = item.icon;
+            {perspectives.map((item) => {
+              const Icon = ICON_MAP[item.icon] || DEFAULT_ICON;
               return (
-                <RevealOnScroll key={item.title}>
+                <RevealOnScroll key={item.id}>
                   <div className="relative flex items-start gap-5 group">
                     {/* Timeline dot */}
                     <div className="absolute -left-8 sm:-left-10 top-6 flex items-center justify-center">

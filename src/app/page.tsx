@@ -19,12 +19,14 @@ import ContactSection from '@/components/rnaslut/ContactSection';
 import Footer from '@/components/rnaslut/Footer';
 
 export default async function HomePage() {
-  const [stats, posts, faqs, gallery, partners] = await Promise.all([
+  const [stats, posts, faqs, gallery, partners, activities, perspectives] = await Promise.all([
     db.siteStat.findMany({ orderBy: { order: 'asc' } }),
     db.blogPost.findMany({ where: { published: true }, orderBy: { createdAt: 'desc' } }),
     db.faqItem.findMany({ where: { active: true }, orderBy: { order: 'asc' } }),
     db.galleryItem.findMany({ where: { active: true }, orderBy: { order: 'asc' } }),
     db.partner.findMany({ orderBy: { order: 'asc' } }),
+    db.activity.findMany({ where: { active: true }, orderBy: { order: 'asc' } }),
+    db.perspective.findMany({ orderBy: { order: 'asc' } }),
   ]);
 
   const statsData = stats.map((s) => ({
@@ -42,10 +44,10 @@ export default async function HomePage() {
         <StatsBar stats={statsData} />
         <AboutSection />
         <PresentationSection />
-        <ActivitiesSection />
+        <ActivitiesSection activities={activities} />
         <GallerySection items={gallery} />
         <ResultsSection />
-        <PerspectivesSection />
+        <PerspectivesSection perspectives={perspectives} />
         <BlogSection posts={posts} />
         <FaqSection items={faqs} />
         <PartnersSection partners={partners} />
