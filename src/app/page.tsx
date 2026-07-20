@@ -26,7 +26,7 @@ export default async function HomePage() {
     db.galleryItem.findMany({ where: { active: true }, orderBy: { order: 'asc' } }),
     db.partner.findMany({ orderBy: { order: 'asc' } }),
     db.activity.findMany({ where: { active: true }, orderBy: { order: 'asc' } }),
-    db.perspective.findMany({ orderBy: { order: 'asc' } }),
+    db.perspective.findMany({ where: { active: true }, orderBy: { order: 'asc' } }),
   ]);
 
   const statsData = stats.map((s) => ({
