@@ -32,11 +32,11 @@ export default function Preloader() {
       <div className="flex flex-col items-center gap-6">
         <img
           src="/img/logo-officiel.jpg"
-          alt="RN-ASLUT Logo"
+          alt="R-N-ASLUT Logo"
           className="w-20 h-20 rounded-full object-cover shadow-lg"
         />
         <span className="text-white font-heading text-xl font-bold tracking-wide">
-          RN-ASLUT
+          R-N-ASLUT
         </span>
         <div className="w-48 h-1 bg-white/20 rounded-full overflow-hidden">
           <div

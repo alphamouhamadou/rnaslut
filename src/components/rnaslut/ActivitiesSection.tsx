@@ -27,7 +27,7 @@ export default function ActivitiesSection({ activities }: ActivitiesSectionProps
               Nos Activités
             </h2>
             <p className="text-rn-gray max-w-2xl mx-auto">
-              Le RN-ASLUT déploie des actions diversifiées à travers le Sénégal
+              Le R-N-ASLUT déploie des actions diversifiées à travers le Sénégal
               pour lutter efficacement contre la tuberculose.
             </p>
           </div>
@@ -44,6 +44,9 @@ export default function ActivitiesSection({ activities }: ActivitiesSectionProps
                       alt={activity.title}
                       className="w-full h-full object-cover"
                     />
+                    <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent px-3 pb-2.5 pt-8">
+                      <p className="text-white text-xs font-medium leading-tight">{activity.title}</p>
+                    </div>
                     {activity.badge && (
                       <span className="absolute top-3 left-3 bg-rn-dark/80 backdrop-blur-sm text-white text-xs font-semibold px-2.5 py-1 rounded-md">
                         {activity.badge}

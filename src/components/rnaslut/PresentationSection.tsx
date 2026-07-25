@@ -21,7 +21,7 @@ export default function PresentationSection() {
               <div className="relative rounded-2xl overflow-hidden">
                 <img
                   src="/img/image4.jpeg"
-                  alt="Équipe RN-ASLUT en action"
+                  alt="Équipe R-N-ASLUT en action"
                   className="w-full h-72 sm:h-80 object-cover"
                 />
                 <span className="absolute bottom-4 left-4 bg-rn-dark/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-md">
@@ -30,7 +30,7 @@ export default function PresentationSection() {
               </div>
 
               <p className="text-rn-gray leading-relaxed">
-                Le Réseau National des Associations de Lutte contre la Tuberculose (RN-ASLUT)
+                Le Réseau National des Associations de Lutte contre la Tuberculose (R-N-ASLUT)
                 a été créé en 2005 pour fédérer les efforts des associations communautaires
                 de lutte contre la TB au Sénégal. Il regroupe aujourd&apos;hui des associations
                 actives dans les 14 régions du pays.
@@ -71,7 +71,7 @@ export default function PresentationSection() {
 
               <div className="mt-6 pt-6 border-t border-white/10">
                 <p className="text-xs text-white/50 leading-relaxed">
-                  Le RN-ASLUT compte des membres actifs dans les 14 régions du Sénégal,
+                  Le R-N-ASLUT compte des membres actifs dans les 14 régions du Sénégal,
                   intervenant aussi bien en milieu urbain que rural à travers un réseau
                   dense de relais communautaires.
                 </p>

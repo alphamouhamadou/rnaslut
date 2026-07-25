@@ -67,12 +67,12 @@ export default function Header() {
         >
           <img
             src="/img/logo-officiel.jpg"
-            alt="RN-ASLUT Logo"
-            className="w-11 h-11 rounded-full object-cover border-2 border-rn-red/30 group-hover:border-rn-red transition-colors"
+            alt="R-N-ASLUT Logo"
+            className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-rn-red/30 group-hover:border-rn-red transition-colors"
           />
           <div className="flex flex-col leading-tight">
-            <span className="font-heading font-bold text-base text-foreground">
-              RN-ASLUT
+            <span className="font-heading font-bold text-lg sm:text-xl text-foreground">
+              R<span className="text-rn-red">-</span>N<span className="text-rn-red">-</span>ASLUT
             </span>
             <span className="text-xs text-rn-gray hidden sm:block">
               Lutte contre la TB au Sénégal
@@ -123,7 +123,7 @@ export default function Header() {
             <SheetContent side="right" className="w-72 pt-10">
               <SheetHeader>
                 <SheetTitle className="text-left font-heading text-lg">
-                  RN-ASLUT
+                  R<span className="text-rn-red">-</span>N<span className="text-rn-red">-</span>ASLUT
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-4" aria-label="Navigation mobile">

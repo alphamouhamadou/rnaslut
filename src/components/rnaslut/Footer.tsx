@@ -19,7 +19,6 @@ const NAV_LINKS = [
 const ASSOCIATION_LINKS = [
   { label: 'Actualités', href: '#actualites' },
   { label: 'FAQ', href: '#faq' },
-  { label: 'Perspectives', href: '#perspectives' },
   { label: 'Nous rejoindre', href: '#contact' },
 ];
 
@@ -42,12 +41,12 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <img
                 src="/img/logo-officiel.jpg"
-                alt="RN-ASLUT Logo"
-                className="w-11 h-11 rounded-full object-cover border-2 border-white/20"
+                alt="R-N-ASLUT Logo"
+                className="w-14 h-14 rounded-full object-cover border-2 border-white/20"
               />
               <div className="flex flex-col leading-tight">
-                <span className="font-heading font-bold text-base text-white">
-                  RN-ASLUT
+                <span className="font-heading font-bold text-lg text-white">
+                  R{'-'}N{'-'}ASLUT
                 </span>
                 <span className="text-xs text-white/50">
                   Lutte contre la TB au Sénégal
@@ -55,7 +54,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-white/60 leading-relaxed mb-5 max-w-xs">
-              Réseau National d&apos;Appui à la Lutte contre la Tuberculose.
+              Réseau National d’Appui à la Lutte contre la Tuberculose (R-N-ASLUT).
               Depuis 2005, nous agissons pour un Sénégal sans tuberculose.
             </p>
             <div className="flex items-center gap-3">
@@ -140,7 +139,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs text-white/40 text-center sm:text-left">
-            © {currentYear} RN-ASLUT. Tous droits réservés.
+            © {currentYear} R-N-ASLUT. Tous droits réservés.
           </p>
           <p className="text-xs text-white/30">
             Lutte contre la Tuberculose au Sénégal depuis 2005

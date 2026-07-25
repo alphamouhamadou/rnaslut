@@ -50,14 +50,14 @@ export default function AdminSidebar({ userName }: AdminSidebarProps) {
       <div className="flex items-center gap-3 px-5 py-5 border-b border-white/10">
         <Image
           src="/img/logo-officiel.jpg"
-          alt="RN-ASLUT"
+          alt="R-N-ASLUT"
           width={40}
           height={40}
           className="rounded-full object-cover shrink-0"
         />
         <div className="min-w-0">
           <div className="font-heading text-lg font-bold tracking-tight text-white">
-            RN-ASLUT
+            R-N-ASLUT
           </div>
           <div className="text-[11px] text-white/50 truncate">Administration</div>
         </div>

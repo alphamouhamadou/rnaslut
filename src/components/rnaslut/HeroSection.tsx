@@ -36,7 +36,7 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-white/85 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          Le RN-ASLUT mobilise les communautés au Sénégal pour la prévention,
+          Le R-N-ASLUT mobilise les communautés au Sénégal pour la prévention,
           le dépistage et l&apos;accompagnement des personnes touchées par la tuberculose.
         </p>
 

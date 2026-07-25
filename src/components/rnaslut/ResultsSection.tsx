@@ -93,7 +93,7 @@ function AnimatedCounter({
 
   const formatted =
     value === 1
-      ? '✓'
+      ? '\u2713'
       : `${display.toLocaleString('fr-FR')}${suffix}`;
 
   return (
@@ -127,13 +127,16 @@ export default function ResultsSection() {
   return (
     <section className="gradient-dark py-16 md:py-24" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 reveal">
+        <div className="text-center mb-12 reveal visible">
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4">
-            Nos Résultats
+            Nos R&eacute;sultats
           </h2>
           <p className="text-white/60 max-w-2xl mx-auto">
-            Des chiffres qui témoignent de l&apos;engagement quotidien du réseau
-            pour la lutte contre la tuberculose au Sénégal.
+            Des chiffres qui t&eacute;moignent de l&apos;engagement quotidien du r&eacute;seau
+            pour la lutte contre la tuberculose au S&eacute;n&eacute;gal.
+          </p>
+          <p className="text-rn-yellow/80 text-sm font-semibold mt-2">
+            Donn&eacute;es cumul&eacute;es depuis la cr&eacute;ation du r&eacute;seau en 2005
           </p>
         </div>
 
@@ -141,7 +144,7 @@ export default function ResultsSection() {
           {RESULT_STATS.map((stat) => (
             <div
               key={stat.label}
-              className="bg-white/6 backdrop-blur-md border border-white/12 rounded-xl p-6 flex items-center gap-5 reveal"
+              className="bg-white/6 backdrop-blur-md border border-white/12 rounded-xl p-6 flex items-center gap-5 reveal visible"
             >
               <div
                 className={`w-14 h-14 ${stat.gradient} rounded-xl flex items-center justify-center shrink-0`}
@@ -160,14 +163,13 @@ export default function ResultsSection() {
           ))}
         </div>
 
-        {/* Quote callout */}
         <RevealOnScroll>
           <div className="mt-12 border-l-4 border-rn-yellow bg-white/5 backdrop-blur-sm rounded-r-xl p-6 md:p-8 flex items-start gap-4">
             <Quote className="size-6 text-rn-yellow shrink-0 mt-1" />
             <p className="text-white/70 leading-relaxed italic">
-              Chaque cas détecté est une vie sauvée. Chaque sensibilisation est un
-              pas de plus vers un Sénégal sans tuberculose. Notre force réside dans
-              l&apos;engagement de nos membres et la confiance des communautés que nous servons.
+              Chaque cas d&eacute;tect&eacute; est une vie sauv&eacute;e. Chaque sensibilisation est un
+              pas de plus vers un S&eacute;n&eacute;gal sans tuberculose. Notre force r&eacute;side dans
+              l&apos;engagement de nos membres et la confiance des communaut&eacute;s que nous servons.
             </p>
           </div>
         </RevealOnScroll>

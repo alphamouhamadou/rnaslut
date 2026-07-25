@@ -37,9 +37,9 @@ export default function AdminLoginPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-3 mb-4">
-            <img src="/img/logo-officiel.jpg" alt="RN-ASLUT" className="w-12 h-12 rounded-full object-cover" />
+            <img src="/img/logo-officiel.jpg" alt="R-N-ASLUT" className="w-12 h-12 rounded-full object-cover" />
             <div className="text-left">
-              <div className="text-white font-heading text-xl font-bold">RN-ASLUT</div>
+              <div className="text-white font-heading text-xl font-bold">R-N-ASLUT</div>
               <div className="text-rn-gray-light text-xs">Panneau d&apos;administration</div>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function AdminLoginPage() {
         </div>
 
         <p className="text-center text-rn-gray-light text-xs mt-6">
-          © {new Date().getFullYear()} RN-ASLUT — Administration
+          © {new Date().getFullYear()} R-N-ASLUT — Administration
         </p>
       </div>
     </div>

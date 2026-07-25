@@ -70,7 +70,7 @@ export default function AboutSection() {
               <p className="text-rn-gray leading-relaxed">
                 Les populations les plus vulnérables — personnes vivant dans la précarité,
                 détenus, diabétiques — sont les plus touchées. C&apos;est pourquoi le
-                RN-ASLUT intervient à travers tout le territoire sénégalais pour renforcer
+                R-N-ASLUT intervient à travers tout le territoire sénégalais pour renforcer
                 la lutte communautaire contre cette maladie.
               </p>
 

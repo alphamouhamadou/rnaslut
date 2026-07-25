@@ -67,7 +67,7 @@ export default function StatsBar({ stats }: StatsBarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat, i) => (
-            <div key={i} className="text-center reveal">
+            <div key={i} className="text-center reveal visible">
               <AnimatedNumber value={stat.value} suffix={stat.suffix} />
               <p className="text-white/60 text-sm mt-2 font-medium">{stat.label}</p>
             </div>
