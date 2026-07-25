@@ -1,13 +1,9 @@
 'use client';
 
-import { Heart, ChevronDown } from 'lucide-react';
+import { Heart } from 'lucide-react';
+import Link from 'next/link';
 
 export default function HeroSection() {
-  const scrollToAbout = () => {
-    const el = document.querySelector('#tb-senegal');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
     <section
       id="accueil"
@@ -36,45 +32,37 @@ export default function HeroSection() {
         </h1>
 
         <p className="text-white/85 text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-          Le R-N-ASLUT mobilise les communautés au Sénégal pour la prévention,
+          Le RN-ASLUT mobilise les communautés au Sénégal pour la prévention,
           le dépistage et l&apos;accompagnement des personnes touchées par la tuberculose.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#association"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#association')?.scrollIntoView({ behavior: 'smooth' });
-            }}
+          <Link
+            href="/association"
             className="gradient-main text-white font-semibold px-8 py-3.5 rounded-lg shadow-red hover:shadow-xl transition-shadow inline-flex items-center gap-2"
           >
             Découvrir l&apos;association
-          </a>
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-            }}
+          </Link>
+          <Link
+            href="/contact"
             className="border-2 border-white/60 text-white font-semibold px-8 py-3.5 rounded-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2"
           >
             Nous soutenir
-          </a>
+          </Link>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <button
-        onClick={scrollToAbout}
+      <Link
+        href="/tb-senegal"
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors"
-        aria-label="Défiler vers le bas"
+        aria-label="Découvrir"
       >
         <span className="text-xs font-medium tracking-widest uppercase">Découvrir</span>
         <div className="relative w-6 h-10 rounded-full border-2 border-current flex items-start justify-center pt-2">
           <span className="w-1.5 h-1.5 rounded-full bg-current animate-bounce" />
         </div>
-      </button>
+      </Link>
     </section>
   );
 }

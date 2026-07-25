@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useCallback, useSyncExternalStore } from 'react';
 import { useTheme } from 'next-themes';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 import { Moon, Sun, Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import {
@@ -13,20 +15,21 @@ import {
 } from '@/components/ui/sheet';
 
 const NAV_LINKS = [
-  { label: 'Accueil', href: '#accueil' },
-  { label: 'La TB au Sénégal', href: '#tb-senegal' },
-  { label: "L'Association", href: '#association' },
-  { label: 'Activités', href: '#activites' },
-  { label: 'Galerie', href: '#galerie' },
-  { label: 'Actualités', href: '#actualites' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Accueil', href: '/' },
+  { label: 'La TB au Sénégal', href: '/tb-senegal' },
+  { label: "L'Association", href: '/association' },
+  { label: 'Activités', href: '/activites' },
+  { label: 'Galerie', href: '/galerie' },
+  { label: 'Actualités', href: '/actualites' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Contact', href: '/contact' },
 ];
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
+  const pathname = usePathname();
   const mounted = useSyncExternalStore(
     () => () => {},
     () => true,
@@ -34,68 +37,59 @@ export default function Header() {
   );
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleNav = useCallback((href: string) => {
-    setMobileOpen(false);
-    const el = document.querySelector(href);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, []);
+  const isActive = useCallback(
+    (href: string) => {
+      if (href === '/') return pathname === '/';
+      return pathname.startsWith(href);
+    },
+    [pathname]
+  );
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-[1000] h-20 transition-shadow duration-300 ${
-        scrolled
+        isScrolled
           ? 'shadow-lg bg-background/80 backdrop-blur-md'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#accueil"
-          onClick={(e) => {
-            e.preventDefault();
-            handleNav('#accueil');
-          }}
-          className="flex items-center gap-3 group"
-        >
+        <Link href="/" className="flex items-center gap-3 group">
           <img
             src="/img/logo-officiel.jpg"
             alt="R-N-ASLUT Logo"
-            className="w-14 h-14 sm:w-16 sm:h-16 rounded-full object-cover border-2 border-rn-red/30 group-hover:border-rn-red transition-colors"
+            className="w-14 h-14 rounded-full object-cover border-2 border-rn-red/30 group-hover:border-rn-red transition-colors"
           />
           <div className="flex flex-col leading-tight">
-            <span className="font-heading font-bold text-lg sm:text-xl text-foreground">
+            <span className="font-heading font-bold text-base text-foreground">
               R<span className="text-rn-red">-</span>N<span className="text-rn-red">-</span>ASLUT
             </span>
             <span className="text-xs text-rn-gray hidden sm:block">
               Lutte contre la TB au Sénégal
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <nav className="hidden lg:flex items-center gap-1" aria-label="Navigation principale">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleNav(link.href);
-              }}
-              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors hover:text-rn-red ${
-                link.href === '#contact' ? 'gradient-main text-white hover:opacity-90' : 'text-foreground/80'
-              }`}
+              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                isActive(link.href)
+                  ? 'text-rn-red'
+                  : 'text-foreground/80 hover:text-rn-red'
+              } ${link.href === '/contact' ? 'gradient-main text-white hover:opacity-90' : ''}`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -128,21 +122,18 @@ export default function Header() {
               </SheetHeader>
               <nav className="flex flex-col gap-1 px-4" aria-label="Navigation mobile">
                 {NAV_LINKS.map((link) => (
-                  <a
+                  <Link
                     key={link.href}
                     href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNav(link.href);
-                    }}
-                    className={`px-3 py-2.5 rounded-md text-sm font-medium transition-colors hover:bg-accent ${
-                      link.href === '#contact'
-                        ? 'gradient-main text-white text-center mt-2'
-                        : 'text-foreground/80 hover:text-foreground'
-                    }`}
+                    onClick={() => setMobileOpen(false)}
+                    className={`px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
+                      isActive(link.href)
+                        ? 'bg-accent text-rn-red'
+                        : 'text-foreground/80 hover:bg-accent hover:text-foreground'
+                    } ${link.href === '/contact' ? 'gradient-main text-white text-center mt-2' : ''}`}
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </SheetContent>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
   Facebook,
   Twitter,
@@ -9,17 +10,17 @@ import {
 } from 'lucide-react';
 
 const NAV_LINKS = [
-  { label: 'Accueil', href: '#accueil' },
-  { label: 'La TB', href: '#tb-senegal' },
-  { label: "L'Association", href: '#association' },
-  { label: 'Activités', href: '#activites' },
-  { label: 'Galerie', href: '#galerie' },
+  { label: 'Accueil', href: '/' },
+  { label: 'La TB au Sénégal', href: '/tb-senegal' },
+  { label: "L'Association", href: '/association' },
+  { label: 'Activités', href: '/activites' },
+  { label: 'Galerie', href: '/galerie' },
 ];
 
 const ASSOCIATION_LINKS = [
-  { label: 'Actualités', href: '#actualites' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Nous rejoindre', href: '#contact' },
+  { label: 'Actualités', href: '/actualites' },
+  { label: 'FAQ', href: '/faq' },
+  { label: 'Nous rejoindre', href: '/contact' },
 ];
 
 const SOCIAL_LINKS = [
@@ -45,8 +46,8 @@ export default function Footer() {
                 className="w-14 h-14 rounded-full object-cover border-2 border-white/20"
               />
               <div className="flex flex-col leading-tight">
-                <span className="font-heading font-bold text-lg text-white">
-                  R{'-'}N{'-'}ASLUT
+                <span className="font-heading font-bold text-base text-white">
+                  R<span className="text-rn-red">-</span>N<span className="text-rn-red">-</span>ASLUT
                 </span>
                 <span className="text-xs text-white/50">
                   Lutte contre la TB au Sénégal
@@ -54,7 +55,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-sm text-white/60 leading-relaxed mb-5 max-w-xs">
-              Réseau National d’Appui à la Lutte contre la Tuberculose (R-N-ASLUT).
+              Réseau National d&apos;Appui à la Lutte contre la Tuberculose.
               Depuis 2005, nous agissons pour un Sénégal sans tuberculose.
             </p>
             <div className="flex items-center gap-3">
@@ -82,12 +83,12 @@ export default function Footer() {
             <ul className="flex flex-col gap-2.5">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-white/60 hover:text-rn-orange transition-colors duration-200"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -101,12 +102,12 @@ export default function Footer() {
             <ul className="flex flex-col gap-2.5">
               {ASSOCIATION_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a
+                  <Link
                     href={link.href}
                     className="text-sm text-white/60 hover:text-rn-orange transition-colors duration-200"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -144,12 +145,12 @@ export default function Footer() {
           <p className="text-xs text-white/30">
             Lutte contre la Tuberculose au Sénégal depuis 2005
           </p>
-          <a
+          <Link
             href="/admin/login"
             className="text-xs text-white/20 hover:text-white/50 transition-colors"
           >
             Administration
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

@@ -1,4 +1,5 @@
 import { Heart } from 'lucide-react';
+import Link from 'next/link';
 
 export default function CtaSection() {
   return (
@@ -22,13 +23,13 @@ export default function CtaSection() {
           sans tuberculose. Votre soutien permet de sauver des vies et de
           renforcer les communautés.
         </p>
-        <a
-          href="#contact"
+        <Link
+          href="/contact"
           className="inline-flex items-center gap-2.5 bg-white text-rn-red font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full hover:bg-white/90 hover:shadow-lg transition-all duration-300"
         >
           <Heart className="w-5 h-5" />
           Faire un don / Devenir membre
-        </a>
+        </Link>
       </div>
     </section>
   );
