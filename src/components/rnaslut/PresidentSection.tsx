@@ -37,10 +37,10 @@ export default function PresidentSection() {
                   </div>
                   <div className="mt-5 text-center">
                     <h3 className="font-heading font-bold text-foreground text-lg">
-                      Nom du Président
+                      Adama Niang
                     </h3>
                     <p className="text-rn-red font-semibold text-sm mt-0.5">
-                      Président du R-N-ASLUT
+                      Président du RN ASLUT
                     </p>
                     <div className="mt-3 w-10 h-0.5 gradient-main rounded-full mx-auto" />
                   </div>
@@ -60,7 +60,7 @@ export default function PresidentSection() {
                         Chaque cas détecté à temps est une vie sauvée. Chaque relais communautaire formé est un maillon supplémentaire dans notre chaîne de solidarité. Notre force réside dans cette mobilisation citoyenne qui transcende les frontières régionales.
                       </p>
                       <p>
-                        Je lance un appel à toutes les bonnes volontés — partenaires techniques et financiers, autorités sanitaires, société civile — à se joindre à nous pour construire un Sénégal libre de la tuberculose. Ensemble, rien n&apos;est impossible.
+                        Je lance un appel à toutes les bonnes volontés, partenaires techniques et financiers, autorités sanitaires, société civile, à se joindre à nous pour construire un Sénégal libre de la tuberculose. Ensemble, rien n&apos;est impossible.
                       </p>
                     </blockquote>
 
