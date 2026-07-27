@@ -3,6 +3,8 @@ import HeroSection from '@/components/rnaslut/HeroSection';
 import StatsBar from '@/components/rnaslut/StatsBar';
 import PresidentSection from '@/components/rnaslut/PresidentSection';
 import PresentationSection from '@/components/rnaslut/PresentationSection';
+import ResultsSection from '@/components/rnaslut/ResultsSection';
+import PartnersSection from '@/components/rnaslut/PartnersSection';
 
 export const dynamic = 'force-dynamic';
 
@@ -21,6 +23,8 @@ export default async function HomePage() {
       <StatsBar stats={statsData} />
       <PresidentSection />
       <PresentationSection />
+      <ResultsSection />
+      <PartnersSection partners={partners} />
     </>
   );
 }
