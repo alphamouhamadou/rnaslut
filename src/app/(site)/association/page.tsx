@@ -1,5 +1,4 @@
 import { db } from '@/lib/db';
-import PresentationSection from '@/components/rnaslut/PresentationSection';
 import ResultsSection from '@/components/rnaslut/ResultsSection';
 import PerspectivesSection from '@/components/rnaslut/PerspectivesSection';
 import PartnersSection from '@/components/rnaslut/PartnersSection';
@@ -15,7 +14,6 @@ export default async function AssociationPage() {
 
   return (
     <div className="pt-20">
-      <PresentationSection />
       <ResultsSection />
       <PerspectivesSection perspectives={perspectives} />
       <PartnersSection partners={partners} />
