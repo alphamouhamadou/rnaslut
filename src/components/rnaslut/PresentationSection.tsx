@@ -20,7 +20,7 @@ export default function PresentationSection() {
             <div className="space-y-6">
               <div className="relative rounded-2xl overflow-hidden">
                 <img
-                  src="/img/image4.jpeg"
+                  src="/img/image4.jpg"
                   alt="Équipe R-N-ASLUT en action"
                   className="w-full h-72 sm:h-80 object-cover"
                 />
