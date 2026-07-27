@@ -17,7 +17,6 @@ import {
 const NAV_LINKS = [
   { label: 'Accueil', href: '/' },
   { label: 'La TB au Sénégal', href: '/tb-senegal' },
-  { label: "L'Association", href: '/association' },
   { label: 'Activités', href: '/activites' },
   { label: 'Galerie', href: '/galerie' },
   { label: 'Actualités', href: '/actualites' },
