@@ -10,6 +10,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function HomePage() {
   const stats = await db.siteStat.findMany({ orderBy: { order: 'asc' } });
+  const partners = await db.partner.findMany({ orderBy: { order: 'asc' } });
 
   const statsData = stats.map((s) => ({
     label: s.label,
