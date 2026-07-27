@@ -12,7 +12,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/img/image4.jpeg"
+          src="/img/image4.jpg"
           alt="Lutte contre la tuberculose au Sénégal"
           className="w-full h-full object-cover"
         />
