@@ -1,6 +1,7 @@
 import { db } from '@/lib/db';
 import HeroSection from '@/components/rnaslut/HeroSection';
 import StatsBar from '@/components/rnaslut/StatsBar';
+import PresidentSection from '@/components/rnaslut/PresidentSection';
 
 export const dynamic = 'force-dynamic';
 
@@ -17,6 +18,7 @@ export default async function HomePage() {
     <>
       <HeroSection />
       <StatsBar stats={statsData} />
+      <PresidentSection />
     </>
   );
 }
