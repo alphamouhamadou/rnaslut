@@ -68,7 +68,7 @@ export default function PresidentSection() {
                     <div className="mt-8 flex items-center gap-4">
                       <div className="h-px flex-1 bg-border" />
                       <p className="text-xs sm:text-sm text-rn-gray dark:text-white/40 font-medium tracking-wide">
-                        Président du RN-ASLUT
+                        Président du RN ASLUT
                       </p>
                       <div className="h-px flex-1 bg-border" />
                     </div>
