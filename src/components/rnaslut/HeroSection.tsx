@@ -8,7 +8,7 @@ export default function HeroSection() {
     <section className="relative min-h-screen min-h-[100dvh] flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 hero-animate-image">
         <img
-          src="/img/tb-cough-hero.jpg"
+          src="/img/image4.jpg"
           alt="Lutte contre la tuberculose au Sénégal"
           className="w-full h-full object-cover object-top"
         />
