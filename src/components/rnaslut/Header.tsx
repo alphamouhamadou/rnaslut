@@ -36,6 +36,8 @@ export default function Header() {
     () => false
   );
 
+  const isHomePage = pathname === '/';
+
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -50,27 +52,31 @@ export default function Header() {
     [pathname]
   );
 
+  const showTransparent = isHomePage && !isScrolled;
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-[1000] h-20 transition-all duration-500 ${
-        isScrolled ? 'header-glass' : 'bg-transparent'
+        showTransparent ? 'bg-transparent' : 'header-glass'
       }`}
     >
-      <div className="max-w-7xl mx-auto h-full px-5 sm:px-6 lg:px-8 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
+      <div className="max-w-7xl mx-auto h-full px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2 sm:gap-3 group">
           <img
             src="/img/logo-officiel.jpg"
             alt="R-N-ASLUT Logo"
-            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover border-2 border-white/30 group-hover:border-rn-red transition-all duration-300 group-hover:scale-105 shadow-md"
+            className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full object-cover border-2 group-hover:border-rn-red transition-all duration-300 group-hover:scale-105 ${
+              showTransparent ? 'border-white/30 shadow-md' : 'border-border shadow-sm'
+            }`}
           />
           <div className="flex flex-col leading-tight">
-            <span className={`font-heading font-bold text-sm sm:text-base transition-colors duration-300 ${
-              isScrolled ? 'text-foreground' : 'text-white'
+            <span className={`font-heading font-bold text-xs sm:text-base transition-colors duration-300 ${
+              showTransparent ? 'text-white' : 'text-foreground'
             }`}>
               R<span className="text-rn-red">-</span>N<span className="text-rn-red">-</span>ASLUT
             </span>
-            <span className={`text-[10px] sm:text-xs transition-colors duration-300 ${
-              isScrolled ? 'text-rn-gray' : 'text-white/70'
+            <span className={`text-[9px] sm:text-xs transition-colors duration-300 hidden sm:block ${
+              showTransparent ? 'text-white/70' : 'text-rn-gray'
             }`}>
               Lutte contre la TB au Sénégal
             </span>
@@ -85,15 +91,15 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`nav-link ${active ? 'nav-active' : ''} ${isContact ? '!text-white hover:!text-white' : ''} ${
-                  !isScrolled && !active && !isContact ? 'text-white/90 hover:text-white' : ''
-                } ${
-                  isScrolled && !active && !isContact ? 'text-foreground/70 hover:text-foreground' : ''
-                } px-3 xl:px-3.5 py-2 text-[13px] font-medium rounded-lg transition-colors duration-300 ${
+                className={`nav-link ${active ? 'nav-active' : ''} ${
                   isContact
-                    ? 'gradient-main !rounded-full px-5 ml-2 shadow-red hover:scale-[1.03] transition-transform duration-300'
-                    : ''
-                }`}
+                    ? 'gradient-main !text-white hover:!text-white !rounded-full px-5 ml-2 shadow-red hover:scale-[1.03]'
+                    : showTransparent
+                      ? 'text-white/90 hover:text-white'
+                      : active
+                        ? ''
+                        : 'text-foreground/70 hover:text-foreground'
+                } px-3 xl:px-3.5 py-2 text-[13px] font-medium rounded-lg transition-all duration-300`}
               >
                 {link.label}
               </Link>
@@ -101,15 +107,15 @@ export default function Header() {
           })}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5">
           {mounted && (
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
               aria-label="Basculer le thème"
-              className={`rounded-full transition-colors duration-300 ${
-                !isScrolled ? 'text-white/80 hover:text-white hover:bg-white/10' : ''
+              className={`rounded-full ${
+                showTransparent ? 'text-white/80 hover:text-white hover:bg-white/10' : ''
               }`}
             >
               {theme === 'dark' ? <Sun className="size-[18px]" /> : <Moon className="size-[18px]" />}
@@ -121,15 +127,15 @@ export default function Header() {
               <Button
                 variant="ghost"
                 size="icon"
-                className={`lg:hidden rounded-full transition-colors duration-300 ${
-                  !isScrolled ? 'text-white/80 hover:text-white hover:bg-white/10' : ''
+                className={`lg:hidden rounded-full ${
+                  showTransparent ? 'text-white/80 hover:text-white hover:bg-white/10' : ''
                 }`}
                 aria-label="Menu"
               >
                 <Menu className="size-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-80 pt-8 border-l-border/50">
+            <SheetContent side="right" className="w-72 pt-8 border-l-border/50">
               <SheetHeader className="mb-8">
                 <div className="flex items-center gap-3">
                   <img
