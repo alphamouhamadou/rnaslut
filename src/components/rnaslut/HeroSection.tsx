@@ -19,12 +19,7 @@ export default function HeroSection() {
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-8 text-center">
         {/* Badge */}
-        <div className="hero-animate-badge">
-          <span className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white text-[11px] sm:text-sm font-medium px-4 sm:px-5 py-2 sm:py-2.5 rounded-full border border-white/20 shadow-lg">
-            <Heart className="size-3.5 sm:size-4 text-rn-yellow" />
-            Ensemble contre la tuberculose depuis 2005
-          </span>
-        </div>
+        
 
         {/* Title */}
         <h1 className="hero-animate-title font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold text-white leading-[1.1] mt-6 sm:mt-8 mb-4 sm:mb-6">
@@ -36,7 +31,7 @@ export default function HeroSection() {
         <div className="hero-animate-desc">
           <div className="inline-block bg-black/30 backdrop-blur-sm rounded-2xl sm:rounded-3xl px-5 sm:px-8 py-4 sm:py-5 mb-8 sm:mb-12">
             <p className="text-white/95 text-sm sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
-              Le R-N-ASLUT mobilise les communautés au Sénégal pour la prévention,
+              Le RN ASLUT mobilise les communautés au Sénégal pour la prévention,
               le dépistage et l&apos;accompagnement des personnes touchées par la tuberculose.
             </p>
           </div>
