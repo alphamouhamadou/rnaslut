@@ -9,7 +9,7 @@ export default function HeroSection() {
       {/* Background image */}
       <div className="absolute inset-0 hero-animate-image">
         <img
-          src="/img/tb-cough-hero.jpg"
+          src="/img/image4.jpg"
           alt="Lutte contre la tuberculose au Sénégal"
           className="w-full h-full object-cover object-center"
         />
@@ -48,28 +48,15 @@ export default function HeroSection() {
             href="/association"
             className="group gradient-main text-white font-semibold text-sm sm:text-base px-7 sm:px-10 py-3.5 sm:py-4 rounded-full shadow-red hover:shadow-2xl hover:scale-[1.03] transition-all duration-300 inline-flex items-center gap-2.5 w-full sm:w-auto justify-center"
           >
-            Découvrir l&apos;association
+            Découvrir 
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
           </Link>
-          <Link
-            href="/contact"
-            className="group border-2 border-white/50 backdrop-blur-sm text-white font-semibold text-sm sm:text-base px-7 sm:px-10 py-3.5 sm:py-4 rounded-full hover:bg-white/15 hover:border-white/70 transition-all duration-300 inline-flex items-center gap-2.5 w-full sm:w-auto justify-center"
-          >
-            Nous soutenir
-            <Heart className="w-4 h-4 group-hover:scale-110 transition-transform" />
-          </Link>
+         
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <Link
-        href="/tb-senegal"
-        className="hero-animate-scroll absolute bottom-5 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-white/70 hover:text-white transition-colors"
-        aria-label="Découvrir"
-      >
-        <span className="text-[9px] sm:text-xs font-medium tracking-[0.2em] sm:tracking-[0.25em] uppercase">Découvrir</span>
-        <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5" style={{ animation: 'bounce 2s infinite' }} />
-      </Link>
+      
     </section>
   );
 }
