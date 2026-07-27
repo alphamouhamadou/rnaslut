@@ -41,7 +41,6 @@
   --radius-lg: 16px;
   --radius-xl: 24px;
 
-  /* R-N-ASLUT custom colors */
   --color-rn-red: #D32F2F;
   --color-rn-red-dark: #B71C1C;
   --color-rn-orange: #FF8C42;
@@ -116,7 +115,6 @@
   }
 }
 
-/* Preloader */
 .preloader {
   position: fixed;
   inset: 0;
@@ -125,7 +123,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1), visibility 0.8s;
 }
 .preloader.hidden {
   opacity: 0;
@@ -133,13 +131,39 @@
   pointer-events: none;
 }
 
-/* Animated counter */
+@keyframes heroSlideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes heroScaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes heroImageZoom {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.hero-animate-badge  { animation: heroSlideUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.3s both; }
+.hero-animate-title  { animation: heroSlideUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.5s both; }
+.hero-animate-desc   { animation: heroSlideUp 0.9s cubic-bezier(0.16,1,0.3,1) 0.7s both; }
+.hero-animate-btns  { animation: heroScaleIn 0.8s cubic-bezier(0.16,1,0.3,1) 0.9s both; }
+.hero-animate-scroll { animation: heroFadeIn 1s ease 1.3s both; }
+.hero-animate-image  { animation: heroImageZoom 2.5s cubic-bezier(0.16,1,0.3,1) 0.2s both; }
+
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Scroll reveal */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
@@ -155,7 +179,6 @@
 .reveal:nth-child(5) { transition-delay: 0.4s; }
 .reveal:nth-child(6) { transition-delay: 0.5s; }
 
-/* Hero gradient text */
 .hero-highlight {
   background: linear-gradient(120deg, #FFE066, #FFFFFF);
   -webkit-background-clip: text;
@@ -163,7 +186,40 @@
   background-clip: text;
 }
 
-/* Gallery lightbox overlay */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #D32F2F, #FF8C42);
+  border-radius: 2px;
+  transition: width 0.35s cubic-bezier(0.16,1,0.3,1), left 0.35s cubic-bezier(0.16,1,0.3,1);
+}
+.nav-link:hover::after,
+.nav-link.nav-active::after {
+  width: 100%;
+  left: 0;
+}
+.nav-link.nav-active {
+  color: #D32F2F !important;
+}
+
+.header-glass {
+  background: rgba(255,255,255,0.88);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+}
+.dark .header-glass {
+  background: rgba(15,23,32,0.9);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2), 0 8px 24px rgba(0,0,0,0.15);
+}
+
 .lightbox-overlay {
   animation: fadeIn 0.3s ease;
 }
@@ -172,12 +228,10 @@
   to { opacity: 1; }
 }
 
-/* Timeline gradient line */
 .timeline-line {
   background: linear-gradient(#D32F2F, #FF8C42, #FFC93C);
 }
 
-/* Gradient backgrounds */
 .gradient-main {
   background: linear-gradient(135deg, #D32F2F 0%, #FF8C42 100%);
 }
@@ -188,19 +242,33 @@
   background: linear-gradient(135deg, #1A2332 0%, #2D3A50 100%);
 }
 .gradient-hero {
-  background: linear-gradient(135deg, rgba(211,47,47,0.92) 0%, rgba(255,140,66,0.88) 100%);
+  background:
+    linear-gradient(to bottom, rgba(26,35,50,0.55) 0%, rgba(26,35,50,0.25) 40%, rgba(26,35,50,0.50) 70%, rgba(26,35,50,0.80) 100%),
+    linear-gradient(to right, rgba(211,47,47,0.25) 0%, transparent 50%);
 }
 
-/* Shadow helpers */
 .shadow-red {
   box-shadow: 0 10px 30px rgba(211,47,47,0.3);
 }
 
-/* Accessibility */
+.stat-card {
+  transition: transform 0.4s cubic-bezier(0.16,1,0.3,1), box-shadow 0.4s ease;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(211,47,47,0.15);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
   .reveal { opacity: 1; transform: none; }
+  .hero-animate-badge,
+  .hero-animate-title,
+  .hero-animate-desc,
+  .hero-animate-btns,
+  .hero-animate-scroll,
+  .hero-animate-image { animation: none; opacity: 1; transform: none; }
 }
